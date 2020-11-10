@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header :: head"></head>
+
+<body class="bg-light">
+
+<th:block th:if="${error}">
+    <div th:replace="fragments/header :: alert"></div>
+</th:block>
+
+<div th:replace="fragments/header :: header"></div>
+
+<div class="d-flex">
+    <div th:replace="fragments/sidebar :: sidebar"></div>
+
+    <div class="content p-4">
+        <h2 class="mb-4" th:if="${Update}">Edit pet</h2>
+        <h2 class="mb-4" th:if="${Create}">Create pet</h2>
+
+        <form th:object="${pet}" method="post" th:action="@{/pets/save}" enctype="multipart/form-data">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <input th:type="hidden" th:field="*{id}">
+                    <div class="form-group">
+                        <label for="name">Pet name</label>
+                        <input th:field="*{name}" type="text" class="form-control" id="name"
+                               placeholder="Enter pet name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer">Customer</label>
+                        <select class="form-control" id="customer" th:field="*{customer}" required>
+                            <option th:each="cus : ${customers}"
+                                    th:text="${cus.login}"
+                                    th:value="${cus.id}"
+                                    th:selected="${cus.equals(pet.customer)}"
+                            ></option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="card-footer bg-white">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script th:replace="fragments/footer :: footer"></script>
+
+</body>
+</html>
