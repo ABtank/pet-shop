@@ -25,20 +25,21 @@
                     <thead>
                     <th>Id</th>
                     <th>Name</th>
-
+                    <th>Customer</th>
                     <th class="actions">Actions</th>
                     </thead>
                     <tbody>
                     <tr th:each="pet : ${pets}">
                         <td th:text="${pet.id}"></td>
-                        <td th:text="${pet.name}"></td>
-                        <td>
-                            <a th:href="@{/pets/{id}/update(id=${pet.id})}" class="btn btn-icon btn-pill btn-primary"
+                        <td><a th:href="@{/pets/{id}/update(id=${pet.id})}" th:text="${pet.name}"></a></a></td>
+                        <td><a th:href="@{/customers/{id}/update(id=${pet.customer.id})}" th:text="${pet.customer.login}"></a></td>
+                        <td class=" actions">
+                            <a th:href="@{/pets/{id}/update(id=${pet.id})}" style="background-color: #0e871a;" class="btn btn-icon btn-success btn-pill"
                                data-toggle="tooltip" title="Edit">
                                 <i class="fa fa-fw fa-edit"></i>
                             </a>
                             <form th:action="@{/pets/{id}/delete(id=${pet.id})}" th:method="delete"
-                                  class="d-inline">
+                                  class="d-inline my-2 my-md-0">
                                 <button class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete">
                                     <i class="fa fa-fw fa-trash"></i>
                                 </button>

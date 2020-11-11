@@ -28,21 +28,23 @@
                 <th>Customer Name</th>
                 <th>Pets</th>
 
-                <th class="actions">Actions</th>
+                <th class=" actions">Actions</th>
                 </thead>
                 <tbody>
                 <tr th:each="customer : ${customers}">
                     <td th:text="${customer.id}"></td>
-                    <td th:text="${customer.login}"></td>
-                    <td>
-                        <div th:each="pet: ${customer.pets}">
-                            <p th:text="*{pet.name}"></p>
-                        </div>
-                    </td>
                     <td>
                         <a th:href="@{/customers/{id}/update(id=${customer.id})}"
-                           class="btn btn-icon btn-pill btn-primary"
-                           data-toggle="tooltip" title="Edit">
+                           th:text="${customer.login}"></a>
+                    </td>
+                    <td>
+                        <div th:each="pet: ${customer.pets}">
+                            <a th:href="@{/pets/{id}/update(id=${pet.id})}" th:text="*{pet.name}"></a>
+                        </div>
+                    </td>
+                    <td class=" actions">
+                        <a th:href="@{/customers/{id}/update(id=${customer.id})}"
+                           class="btn btn-icon btn-success btn-pill" style="background-color: #0e871a;" data-toggle="tooltip" title="Edit">
                             <i class="fa fa-fw fa-edit"></i>
                         </a>
                         <form th:action="@{/customers/{id}/delete(id=${customer.id})}" th:method="delete"
