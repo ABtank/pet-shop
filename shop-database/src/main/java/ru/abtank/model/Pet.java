@@ -1,6 +1,7 @@
 package ru.abtank.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "pets")
@@ -14,6 +15,7 @@ public class Pet {
     private String name;
 
     @ManyToOne
+    @NotNull
     private Customer customer;
 
     public Pet() {

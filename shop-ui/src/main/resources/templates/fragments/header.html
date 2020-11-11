@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+>
 
 <head th:fragment="head">
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" th:href="@{/css/bootadmin.min.css}">
     <link rel="stylesheet" th:href="@{/css/datatables.min.css}">
 
-    <title>GeekMarket Admin</title>
+    <title>Pet clinic</title>
 </head>
 
 <body class="bg-light">
@@ -19,21 +19,8 @@
 <nav th:fragment="header" class="navbar navbar-expand navbar-dark bg-primary">
     <a class="sidebar-toggle mr-3" href="#"><i class="fa fa-bars"></i></a>
     <form th:action="@{/}" method="get">
-    <button class="btn btn-primary" href="#">AbtankShop Admin</button>
+        <button class="btn btn-primary" href="#">Pet Shop</button>
     </form>
-
-    <div class="navbar-collapse collapse">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-envelope"></i> 5</a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-bell"></i> 3</a></li>
-            <li class="nav-item dropdown">
-                <a href="#" id="logged-in-username" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-user"></i>
-                    <span id="dd_user">Default User</span>
-                </a>
-            </li>
-        </ul>
-    </div>
 </nav>
 
 <div th:fragment="alert" class="alert alert-danger alert-dismissible" role="alert">

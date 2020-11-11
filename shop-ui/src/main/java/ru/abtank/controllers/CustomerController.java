@@ -14,6 +14,8 @@ import ru.abtank.repo.CustomerRepr;
 import ru.abtank.services.CustomerService;
 import ru.abtank.services.PetService;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/customers")
 public class CustomerController {
@@ -61,7 +63,7 @@ public class CustomerController {
     }
 
     @PostMapping("/save")
-    public String saveCustomer(Model model, CustomerRepr customer, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String saveCustomer(Model model, @Valid CustomerRepr customer, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         model.addAttribute("activePage", "Сustomers");
         if (bindingResult.hasErrors()) {
             return "customer_form";
