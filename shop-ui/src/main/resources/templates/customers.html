@@ -45,7 +45,7 @@
                         </td>
                         <td class=" actions">
                             <a th:href="@{/customers/{id}/update(id=${customer.id})}"
-                               class="btn btn-icon btn-success btn-pill" style="background-color: #0e871a;" data-toggle="tooltip" title="Edit">
+                               class="btn btn-icon btn-custom-green btn-pill" data-toggle="tooltip" title="Edit">
                                 <i class="fa fa-fw fa-edit"></i>
                             </a>
                             <form th:action="@{/customers/{id}/delete(id=${customer.id})}" th:method="delete"

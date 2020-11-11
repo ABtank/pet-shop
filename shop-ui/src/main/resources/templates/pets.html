@@ -34,7 +34,7 @@
                         <td><a th:href="@{/pets/{id}/update(id=${pet.id})}" th:text="${pet.name}"></a></a></td>
                         <td><a th:href="@{/customers/{id}/update(id=${pet.customer.id})}" th:text="${pet.customer.login}"></a></td>
                         <td class=" actions">
-                            <a th:href="@{/pets/{id}/update(id=${pet.id})}" style="background-color: #0e871a;" class="btn btn-icon btn-success btn-pill"
+                            <a th:href="@{/pets/{id}/update(id=${pet.id})}" class="btn btn-icon btn-custom-green btn-pill"
                                data-toggle="tooltip" title="Edit">
                                 <i class="fa fa-fw fa-edit"></i>
                             </a>
