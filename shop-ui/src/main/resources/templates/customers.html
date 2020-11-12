@@ -40,7 +40,9 @@
                         <td>
                             <div class="d-inline" th:each="pet: ${customer.pets}">
                                 <a th:href="@{/pets/{id}/update(id=${pet.id})}"
-                                   th:text="*{pet.name+', '}"></a>
+                                   th:text="*{pet.name}"></a>
+                                <a th:if="${!pet.getId().equals(customer.getPets().get(customer.getPets().size()-1).getId())}"
+                                    th:text="${', '}"></a>
                             </div>
                         </td>
                         <td class=" actions">
