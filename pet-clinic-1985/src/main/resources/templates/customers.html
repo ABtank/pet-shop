@@ -38,10 +38,10 @@
                                th:text="${customer.login}"></a>
                         </td>
                         <td>
-                            <div class="d-inline" th:each="pet: ${customer.pets}">
+                            <div class="d-inline" th:each="pet, state: ${customer.pets}">
                                 <a th:href="@{/pets/{id}/update(id=${pet.id})}"
                                    th:text="*{pet.name}"></a>
-                                <a th:if="${!pet.getId().equals(customer.getPets().get(customer.getPets().size()-1).getId())}"
+                                <a th:if="${!state.last}"
                                     th:text="${', '}"></a>
                             </div>
                         </td>

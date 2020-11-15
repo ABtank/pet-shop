@@ -18,12 +18,13 @@
 
     <modules>
         <module>shop-database</module>
-        <module>shop-ui</module>
+        <module>pet-clinic-1985</module>
     </modules>
 
     <properties>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
 
 

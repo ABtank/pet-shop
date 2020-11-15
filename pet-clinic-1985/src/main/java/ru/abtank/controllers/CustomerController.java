@@ -11,10 +11,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ru.abtank.exceptions.NotFoundException;
 import ru.abtank.model.Customer;
 import ru.abtank.repo.CustomerRepr;
+import ru.abtank.repo.PetRepr;
 import ru.abtank.services.CustomerService;
 import ru.abtank.services.PetService;
 
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/customers")
